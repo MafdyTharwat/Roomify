@@ -59,9 +59,9 @@ const hotels = [
         description: "Cozy Stay Hotel in Los Angeles provides a warm and inviting atmosphere for travelers looking for comfort at an affordable price. Located near popular attractions, this budget-friendly hotel offers well-appointed rooms with all essential amenities. Guests can enjoy a variety of nearby dining options and explore the vibrant city of Los Angeles. Whether you're visiting for business or leisure, Cozy Stay Hotel provides a convenient and relaxing base to experience the best of the city while enjoying excellent service.", 
         videoUrl: "..\\Videos\\Cozy Stay.mp4"},
 
-    { name: "K & N Hotel", location: "Abu Dhabi", price: 200, rating: 4.5, img: "..\\Images\\lkkj.jpg" ,
+    { name: "K & N Hotel", location: "Abu Dhabi", price: 200, rating: 4.5, img: "../Images\\lkkj.jpg" ,
          description: "K & N Hotel in Abu Dhabi offers a blend of traditional Arabian hospitality and modern luxury. With elegantly furnished rooms, guests can enjoy a peaceful stay, equipped with all the comforts of home. The hotel provides a range of services, including a fitness center, spa, and multiple dining options that cater to international tastes. Located in a prime area, the hotel is close to Abu Dhabi’s main attractions, including shopping malls and cultural landmarks. Ideal for both business and leisure, K & N Hotel guarantees a comfortable and memorable stay.",
-          videoUrl: "..\\Videos\\K&N Hotel.mp4"} // Array of structs. Each struct contains name,loc,price,rating,img,desc and vid
+          videoUrl: "../Videos\\K&N Hotel.mp4"} // Array of structs. Each struct contains name,loc,price,rating,img,desc and vid
 ];
 
 function displayHotels() 
