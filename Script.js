@@ -51,7 +51,7 @@ const hotels = [
         description: "Panorama Bungalows Resort in Gouna offers an idyllic escape with its luxurious beachfront accommodations. The resort features private bungalows, each with stunning sea views, providing guests with a tranquil retreat. The resort offers a variety of dining options, a relaxing spa, and exciting water sports activities. Guests can enjoy the clear waters of the Red Sea or unwind at the resort's pools. Whether you're looking for adventure or relaxation, Panorama Bungalows Resort offers the perfect blend of both.",
          videoUrl: "..\\Videos\\Panorama Bungalows Resort.mp4"},
 
-    { name: "Regina Resort", location: "Sokhna", price: 210, rating: 4.5, img: "..\\Images\\Sokhna.webp", 
+    { name: "Regina Resort", location: "Sokhna", price: 210, rating: 4.5, img: "D:\FCI\Projects\Roomify\Images\Sokhna.webp", 
         description: "Regina Resort in Sokhna is an upscale resort that combines luxurious accommodations with serene surroundings. With stunning views of the Red Sea, the resort offers spacious rooms and private villas, perfect for families or couples. Guests can enjoy a range of leisure activities such as water sports, beach lounging, or indulge in fine dining at the resort's restaurants. Regina Resort is a perfect destination for a relaxing getaway, offering a peaceful retreat while being close to local attractions in Sokhna.", 
         videoUrl: "..\\Videos\\Regina El Sokhna.mp4"},
 
