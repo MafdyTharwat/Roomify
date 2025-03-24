@@ -1,0 +1,47 @@
+.about-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #0073e6;
+    padding: 30px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: left;
+}
+
+.about-container header h1
+ {
+    color: #0073e6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: #005bb5;
+    margin-top: 20px;
+}
+
+section p, ul {
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #100151;
+}

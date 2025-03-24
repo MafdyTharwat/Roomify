@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Details</title>
+    <link rel="stylesheet" href="HotelDetails.css">
+    <link rel="icon" href="D:\FCI\Projects\Frontend\Roomify\Images\RoomifyLogo.jpg" type="image/x-icon"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Login.html">Login</a></li>
+        <li><a href="Index.html">Go To Home</a></li>
+        <li><a href="Register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const hotelIndex = parseInt(urlParams.get('hotel'), 10);
+
+        const hotels = [
+    { name: "Luxury Paradise Hotel", location: "New York", price: 300, rating: 4.8, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\horus-paradise-luxury.jpg",
+         description: "The Luxury Paradise Hotel in New York offers a lavish experience with world-class amenities. Guests enjoy spacious rooms with stunning city views, an on-site spa, fine dining restaurants, and personalized services. Whether you’re visiting for business or pleasure, this five-star hotel caters to all your needs. The hotel is centrally located, allowing easy access to New York's most famous attractions, shopping areas, and entertainment venues. It’s the perfect blend of comfort and sophistication for discerning travelers.",
+          videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Luxury Paradise Resort.mp4"},
+
+    { name: "The Royal Resort", location: "Dubai", price: 320, rating: 4.9, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\the-royal-atlantis.jpg",
+         description: "The Royal Resort in Dubai is an iconic luxury destination known for its opulent design and exceptional services. The resort offers breathtaking views of the Arabian Gulf, a variety of exquisite dining options, luxurious spa treatments, and top-tier amenities. Whether you’re enjoying a relaxing day by the pool or exploring the vibrant city of Dubai, this resort guarantees an unforgettable stay. With its prime location, guests are just minutes away from world-class shopping, entertainment, and cultural experiences.",
+          videoUrl:"D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Royal Resort.mp4"},
+
+    { name: "Ocean View Resort", location: "Miami", price: 290, rating: 4.8, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Hotel2.jpg",
+         description: "Ocean View Resort in Miami is a stunning retreat that offers guests breathtaking views of the Atlantic Ocean. Known for its modern design, this resort provides luxury accommodations, a full-service spa, and an array of recreational activities, including water sports and beach access. Guests can unwind in the stylish rooms or enjoy a delicious meal at one of the resort’s renowned restaurants. Whether you’re relaxing by the pool or exploring the nearby nightlife, the Ocean View Resort is the ultimate beachside getaway.",
+          videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Oceanfront Resort.mp4"},
+
+    { name: "Sheraton Sharm Resort", location: "Sharm El-Sheikh", price: 250, rating: 4.7, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Sheraton-Sharm-Hotel-Resort-Villas-Spa-Exterior.JPEG",
+         description: "Sheraton Sharm Resort is an elegant hotel located in the heart of Sharm El-Sheikh, offering the perfect blend of comfort and luxury. With its private beach, sparkling pools, and scenic views of the Red Sea, guests are treated to a relaxing and memorable stay. The resort features various restaurants, a state-of-the-art spa, and multiple leisure activities. Whether you’re diving in the crystal-clear waters or enjoying a romantic dinner with a view, Sheraton Sharm Resort ensures a delightful vacation experience for all.",
+          videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\SHERATON SHARM.mp4"},
+
+    { name: "Crystal Hotel", location: "Matrouh", price: 220, rating: 4.6, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Crystal.webp", 
+        description: "Crystal Hotel, located in the serene city of Matrouh, is a perfect getaway for those seeking tranquility and comfort. Surrounded by beautiful beaches and clear blue waters, this hotel offers spacious rooms with modern amenities. Guests can enjoy the outdoor pool, fitness center, and a variety of dining options. The hotel's prime location also offers easy access to local attractions. With its friendly staff and relaxing atmosphere, Crystal Hotel is a great choice for both families and couples looking for a peaceful retreat.", 
+        videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Crystal.mp4"},
+
+    { name: "Divani Palace Hotel", location: "Athens", price: 220, rating: 4.6, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Divani Palace.jpg", 
+        description: "Divani Palace Hotel in Athens is a luxurious property that combines Greek hospitality with modern comforts. Located near major historical sites, it offers an ideal base for both tourists and business travelers. The hotel features elegant rooms, a full-service spa, and several dining options that showcase Mediterranean cuisine. Guests can enjoy panoramic views of the Acropolis from the rooftop bar or take a dip in the outdoor pool. With its sophisticated atmosphere and exceptional service, Divani Palace is a top choice for discerning travelers.", 
+        videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Divani Palace.mp4"},   
+
+    { name: "Mountain Escape", location: "Colorado", price: 200, rating: 4.5, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Hotel4.jpg",
+         description: "Mountain Escape is nestled in the heart of Colorado’s Rocky Mountains, offering guests a peaceful and scenic retreat. This charming hotel combines rustic charm with modern luxury. The rooms provide stunning views of the surrounding mountains, and guests can enjoy outdoor activities such as hiking, skiing, and mountain biking. The hotel features a spa, cozy lounges, and a delicious selection of regional cuisine. Whether you’re seeking adventure or relaxation, Mountain Escape is the perfect destination for nature lovers and outdoor enthusiasts.",
+          videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Mountain Escape.mp4"},
+
+    { name: "Dubai Resort", location: "Dubai", price: 230, rating: 4.6, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\news_bi4z2qsyiq.jpg",
+         description: "Dubai Resort offers guests a unique experience with its stunning views of the Arabian Gulf and world-class facilities. The resort boasts luxurious accommodations, including spacious rooms and private villas with contemporary designs. Visitors can indulge in gourmet dining, unwind at the spa, or enjoy recreational activities like water sports and golf. Located close to Dubai’s top attractions, it’s the ideal place for both relaxation and adventure. Whether you’re visiting for business or leisure, Dubai Resort provides unparalleled luxury and service.",
+          videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Dubai Resort.mp4"}, 
+
+    { name: "Raffles Hotel", location: "Singapore", price: 200, rating: 4.5, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Raffles.avif",
+         description: "Raffles Hotel in Singapore is a landmark of luxury and elegance, offering guests an unforgettable experience. With its colonial-style architecture and impeccable service, this hotel is synonymous with luxury and sophistication. Guests can enjoy the opulent rooms, beautiful gardens, and a variety of fine dining options. The hotel’s famous Long Bar is a must-visit for travelers. Raffles Hotel is ideally located in the heart of Singapore, providing easy access to shopping, dining, and cultural experiences. A stay here is truly a once-in-a-lifetime experience.",
+          videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Raffles Hotel.mp4"},  
+
+    { name: "Sheraton Maldives Hotel", location: "Maldives", price: 210, rating: 4.5, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\ee2f7c33.avif", 
+        description: "Sheraton Maldives Hotel is a luxury beachfront property located in the heart of the Maldives. With crystal-clear waters, sandy beaches, and stunning coral reefs, it’s an ideal destination for those seeking both adventure and relaxation. The resort offers spacious overwater bungalows, world-class dining, and exceptional service. Guests can enjoy activities such as snorkeling, diving, and water sports, or simply unwind in the spa. Whether you're traveling with family or as a couple, the Sheraton Maldives ensures a memorable and relaxing getaway.",
+         videoUrl:"D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Maldives Hotel.mp4"},
+
+    { name: "Alex Hotel", location: "Alexandria", price: 180, rating: 4.7, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Alex.jpg",
+         description: "Alex Hotel in Alexandria is a blend of modern comfort and timeless charm. Situated along the Mediterranean coast, the hotel offers guests scenic views, spacious rooms, and high-end amenities. The hotel’s restaurant serves fresh seafood and Mediterranean dishes, while the rooftop bar provides a perfect spot to relax and enjoy the sunset. Visitors can explore the rich history of Alexandria or simply enjoy the hotel’s private beach. Whether you're visiting for a business trip or a vacation, Alex Hotel promises a memorable stay.", 
+         videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Alex Hotel.mp4"},
+
+    { name: "Four Seasons Hotels", location: "Toronto", price: 190, rating: 4.5, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\FourSeasons.jpg", 
+        description: "Four Seasons Hotels in Toronto offers an upscale urban experience with luxurious accommodations and impeccable service. Located in the heart of the city, this five-star hotel offers easy access to world-class dining, shopping, and entertainment. Guests can enjoy spa treatments, relax by the pool, or dine at one of the hotel’s renowned restaurants. The rooms are designed with elegance and comfort in mind, providing guests with stunning views of the Toronto skyline. Whether you’re visiting for work or leisure, Four Seasons offers a sophisticated retreat.", 
+        videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Four Seasons Hotel.mp4"},    
+
+    { name: "Panorama Bungalows Resort", location: "Gouna", price: 220, rating: 4.6, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Panorama Bungalows Resort.jpg", 
+        description: "Panorama Bungalows Resort in Gouna offers an idyllic escape with its luxurious beachfront accommodations. The resort features private bungalows, each with stunning sea views, providing guests with a tranquil retreat. The resort offers a variety of dining options, a relaxing spa, and exciting water sports activities. Guests can enjoy the clear waters of the Red Sea or unwind at the resort's pools. Whether you're looking for adventure or relaxation, Panorama Bungalows Resort offers the perfect blend of both.",
+         videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Panorama Bungalows Resort.mp4"},
+
+    { name: "Regina Resort", location: "Sokhna", price: 210, rating: 4.5, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Sokhna.webp", 
+        description: "Regina Resort in Sokhna is an upscale resort that combines luxurious accommodations with serene surroundings. With stunning views of the Red Sea, the resort offers spacious rooms and private villas, perfect for families or couples. Guests can enjoy a range of leisure activities such as water sports, beach lounging, or indulge in fine dining at the resort's restaurants. Regina Resort is a perfect destination for a relaxing getaway, offering a peaceful retreat while being close to local attractions in Sokhna.", 
+        videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Regina El Sokhna.mp4"},
+
+    { name: "Cozy Stay Hotel", location: "Los Angeles", price: 100, rating: 3.8, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\Hotel3.jpg", 
+        description: "Cozy Stay Hotel in Los Angeles provides a warm and inviting atmosphere for travelers looking for comfort at an affordable price. Located near popular attractions, this budget-friendly hotel offers well-appointed rooms with all essential amenities. Guests can enjoy a variety of nearby dining options and explore the vibrant city of Los Angeles. Whether you're visiting for business or leisure, Cozy Stay Hotel provides a convenient and relaxing base to experience the best of the city while enjoying excellent service.", 
+        videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\Cozy Stay.mp4"},
+
+    { name: "K & N Hotel", location: "Abu Dhabi", price: 200, rating: 4.5, img: "D:\\FCI\\Projects\\Frontend\\Roomify\\Images\\lkkj.jpg" ,
+         description: "K & N Hotel in Abu Dhabi offers a blend of traditional Arabian hospitality and modern luxury. With elegantly furnished rooms, guests can enjoy a peaceful stay, equipped with all the comforts of home. The hotel provides a range of services, including a fitness center, spa, and multiple dining options that cater to international tastes. Located in a prime area, the hotel is close to Abu Dhabi’s main attractions, including shopping malls and cultural landmarks. Ideal for both business and leisure, K & N Hotel guarantees a comfortable and memorable stay.",
+          videoUrl: "D:\\FCI\\Projects\\Frontend\\Roomify\\Videos\\K&N Hotel.mp4"}
+];
+
+        const selectedHotel = hotels[hotelIndex];
+
+        document.body.innerHTML += `
+            <br><h2>${selectedHotel.name}</h2>
+            <p>${selectedHotel.location}</p>
+            <p>Price: $${selectedHotel.price}/night</p>
+            <p>Rating: ${selectedHotel.rating}⭐</p>
+            <p>${selectedHotel.description}</p>
+            <iframe width="560" height="315" src="${selectedHotel.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        `;
+    </script>
+
+   <button>
+    <a href="Booking.html" style="text-decoration: none; color: azure;">Book Now</a>
+  </button>
+  
+    <footer>
+      <section class="footer-links">
+          <ul>
+              <li><a href="Contact.html">Contact Us</a></li>
+              <li><a href="AboutUs.html">About Us</a></li>
+          </ul>
+      </section>
+      <p>&copy; Roomify. All rights reserved.</p>
+  </footer>
+</body>
+</html>
