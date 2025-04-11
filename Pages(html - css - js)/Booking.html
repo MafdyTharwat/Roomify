@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="BookingStyle.css">
+    <link rel="icon" href="D:\FCI\Projects\Frontend\Roomify\Images\RoomifyLogo.jpg" type="image/x-icon"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="Order-container">
+        <h1  style="color: #0073e6;">Book your stay</h1>
+        <form id="orderForm" method="post">
+            <div class="input-group">
+                <label for="hotel">Select Hotel:</label>
+                <select id="hotel" name="hotel" required>
+                    <option value="Luxury Paradise Hotel">Luxury Paradise Hotel</option>
+                    <option value="The Royal Resort">The Royal Resort</option>
+                    <option value="Ocean View Resort">Ocean View Resort</option>
+                    <option value="Sheraton Sharm Resort">Sheraton Sharm Resort</option>
+                    <option value="Crystal Hotel">Crystal Hotel</option>
+                    <option value="Divani Palace Hotel">Divani Palace Hotel</option>
+                    <option value="Mountain Escape">Mountain Escape</option>
+                    <option value="Dubai Resort">Dubai Resort</option>
+                    <option value="Raffles Hotel">Raffles Hotel</option>
+                    <option value="Sheraton Maldives Hotel">Sheraton Maldives Hotel</option>
+                    <option value="Alex Hotel">Alex Hotel</option>
+                    <option value="Four Seasons Hotels">Four Seasons Hotels</option>
+                    <option value="Panorama Bungalows Resort">Panorama Bungalows Resort</option>
+                    <option value="Regina Resort">Regina Resort</option>
+                    <option value="Cozy Stay Hotel">Cozy Stay Hotel</option>
+                    <option value="K & N Hotel">K & N Hotel</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="check-in">check-in</label>
+                <input type="date" id="check-in">
+                <label for="check-out">check-out</label>
+                <input type="date" id="check-out">
+            </div>
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="input-group">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" placeholder="Enter your ID" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="input-group">
+                <label for="creditCard">Credit Card</label>
+                <input type="password" id="country" name="country" placeholder="Enter your credit card" required>
+            </div>
+            <button type="button" onclick="submitStay()">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Roomify. All rights reserved.</p>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>
